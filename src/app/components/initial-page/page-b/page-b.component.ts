@@ -14,4 +14,8 @@ export class PageBComponent implements OnInit {
   ngOnInit() {
   }
 
+  showNumber(number) {
+    console.log(number);
+  }
+
 }
