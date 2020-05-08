@@ -1,38 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { InitialPageComponent } from './components/initial-page/initial-page.component';
+import { InitialComponent } from './pages/initial/initial.component';
 import { PageAComponent } from './components/initial-page/page-a/page-a.component';
 import { PageBComponent } from './components/initial-page/page-b/page-b.component';
-import { ConfigPageComponent } from './components/config-page/config-page.component';
+import { ConfigComponent } from './pages/config/config.component';
 
 
-const routes: Routes = [{
-  path: 'initialPage',
-  component: InitialPageComponent,
-  children: [
-    {
-      path: "",
-      redirectTo: "initialPage",
-      pathMatch: "full"
-    },
-    {
-      path: "pageA",
-      component: PageAComponent
-    },
-    {
-      path: "pageB",
-      component: PageBComponent
-    },
-  ]},
+const routes: Routes = [
   {
-    path: 'configPage',
-    component: ConfigPageComponent
+  path: '',
+  component: InitialComponent
   },
+
   {
+    path: 'config',
+    component: ConfigComponent
+  },
+  /*{
     path: '',
     redirectTo: 'initialPage',
     pathMatch: "full"
-}];
+}*/];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
