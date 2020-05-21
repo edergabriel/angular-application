@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InitialComponent } from './pages/initial/initial.component';
-import { PageAComponent } from './components/initial-page/page-a/page-a.component';
-import { PageBComponent } from './components/initial-page/page-b/page-b.component';
 import { ConfigComponent } from './pages/config/config.component';
 
 

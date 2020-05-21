@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InitialComponent implements OnInit {
 
+  nome = "Testando";
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showNumber(number) {
+    console.log(number);
   }
 
 }
