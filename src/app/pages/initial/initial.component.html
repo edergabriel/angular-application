@@ -1,8 +1,11 @@
-<p>initial works!</p>
+<div class="container">
+    <app-card [teste]="nome" (numero)="showNumber($event)"></app-card>
 
-<app-card [teste]="nome" (numero)="showNumber($event)"></app-card>
-
-<form>
-    <input type="text">
-    <button>Enviar</button>
-</form>
+    <form autocomplete="off">
+        <input type="text" placeholder="Login">
+        <input type="password" placeholder="Password"> 
+        <button (click)="login()" class="btn btn-primary">Enviar</button>
+    </form>
+    
+    <button (click)="login()" class="btn btn-primary" >click</button>
+</div>
