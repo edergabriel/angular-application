@@ -28,7 +28,7 @@ export class InitialComponent extends ValidationFormHelper implements OnInit {
     if (this.form.valid) {
       this.router.navigate(['dashboard']);
     } else {
-      console.log("Teste");
+      this.checkValidationsForm(this.form);
     }
     
   }
