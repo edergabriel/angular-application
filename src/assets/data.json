@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Item 1",
+        "image": "https://via.placeholder.com/150",
+        "description": "Teste 4"
+    },
+    {
+        "name": "Item 2",
+        "image": "https://via.placeholder.com/150",
+        "description": "Teste 3"
+    },
+    {
+        "name": "Item 3",
+        "image": "https://via.placeholder.com/150",
+        "description": "Teste 2"
+    },
+    {
+        "name": "Item 4",
+        "image": "https://via.placeholder.com/150",
+        "description": "Teste 1"
+    }
+]

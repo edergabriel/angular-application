@@ -1,5 +1,5 @@
 <p>dashboard works!</p>
-
+<!--
 <div class="row">
     <div class="col-6">
         <p>List 1</p>
@@ -15,6 +15,29 @@
 
         </div>
     </div>
+</div>-->
+
+<div class="container mx-auto p-2">
+    <div class="row">
+      <div cdkDropList #minha="cdkDropList" [cdkDropListConnectedTo]="[confirmados]" [cdkDropListData]="myList"
+        class="col-lg-6" (cdkDropListDropped)="drop($event)">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-danger">
+            <h3>Lista 1</h3>
+          </li>
+          <li class="list-group-item" *ngFor="let p of myList " cdkDrag>{{p.name}}</li>
+        </ul>
+      </div>
+      <div cdkDropList #confirmados="cdkDropList" [cdkDropListData]="confirmList" [cdkDropListConnectedTo]="[minha]"
+        (cdkDropListDropped)="drop($event)" class="col-lg-6">
+        <ul class="list-group">
+          <li class="list-group-item active">
+            <h3>Lista 2</h3>
+          </li>
+          <li class="list-group-item" *ngFor="let p of confirmList" cdkDrag>
+            <img [src]="p.image" class="img-person">
+            {{p.name}}</li>
+        </ul>
+      </div>
+    </div>
 </div>
-
-
