@@ -11,6 +11,7 @@ import { CardComponent } from './components/card/card.component';
 import { DashboardComponent } from './pages/auth/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ProductDetailComponent } from './pages/auth/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     InitialComponent,
     ConfigComponent,
     CardComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
