@@ -1,1 +1,30 @@
-<p>config works!</p>
+<div class="container">
+    <div class="stepGeneral">
+        <form  [formGroup]="form" autocomplete="off">
+            <div class="form-group row steps" id="step1">
+                <label class="col-12 form-field-label">Test:</label>
+                <div class="col-12 form-field">
+                    <input type="text" formControlName="test" maxlength="50">
+                </div>                            
+                <div class="col-12">
+                    <ul class="parsley-errors-list filled" *ngIf="checkValidTouched('test')">
+                        <li class="parsley-required">Required</li>
+                    </ul>  
+                </div>          
+            </div>
+            <div class="form-group row steps" id="step2">
+                <label class="col-12 form-field-label">Information:</label>
+                <div class="col-12 form-field">
+                    <input type="text" formControlName="Information" maxlength="12">
+                </div>                            
+                <div class="col-12">
+                    <ul class="parsley-errors-list filled" *ngIf="checkValidTouched('information')">
+                        <li class="parsley-required">Required</li>
+                    </ul>  
+                </div>          
+            </div>
+            <button (click)="login()" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+</div>

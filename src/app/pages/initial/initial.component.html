@@ -1,6 +1,4 @@
 <div class="container">
-    <app-card [teste]="nome" (numero)="showNumber($event)"></app-card>
-
     <form  [formGroup]="form" autocomplete="off">
         <div class="form-group row">
             <label class="col-12 form-field-label">Username:</label>
@@ -28,4 +26,5 @@
         <p><a href="#">New User</a></p>
         <button (click)="login()" class="btn btn-primary">Enviar</button>
     </form>
+    <app-card [teste]="nome" (numero)="showNumber($event)"></app-card>
 </div>
