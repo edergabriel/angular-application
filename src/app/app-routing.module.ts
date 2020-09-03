@@ -23,6 +23,7 @@ const routes: Routes = [
     path: 'productDetail',
     component: ProductDetailComponent
   },
+  { path: 'customers', loadChildren: () => import('./pages/customers/customers.module').then(m => m.CustomersModule) },
   /*{
     path: '',
     redirectTo: 'initialPage',
