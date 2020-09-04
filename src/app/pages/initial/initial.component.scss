@@ -3,6 +3,7 @@ form {
     padding: 15px;
     width: 400px;
     margin: 0 auto;
+
 }
 
 input {
@@ -10,4 +11,11 @@ input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
