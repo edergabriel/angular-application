@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { HttpClient } from '@angular/common/http';
+import {Router, ActivatedRoute} from '@angular/router';
 
 export interface Character {
   name: string;
@@ -17,7 +18,9 @@ export class DashboardComponent  {
   myList: Character[]
   confirmList: Character[] = [];
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,        
+              private router: Router,
+              private route: ActivatedRoute) {
     this.getMyList()
   }
 
@@ -26,6 +29,10 @@ export class DashboardComponent  {
     .subscribe(list =>{
      this.myList = list;
     })
+ }
+
+ goTo(page) {
+  this.router.navigate(["/" + page]);
  }
 
  drop(event: CdkDragDrop<Character[]>) {
