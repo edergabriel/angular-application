@@ -19,11 +19,8 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [AuthGuardService]
-  },
-  {
-    path: 'productDetail',
-    component: ProductDetailComponent
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('./pages/auth/dashboard/dashboard.module').then(m => m.DashboardModule) 
   },
   { path: 'customers', loadChildren: () => import('./pages/customers/customers.module').then(m => m.CustomersModule) },
   /*{

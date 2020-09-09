@@ -110,6 +110,7 @@
 </div>-->
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
   <div class="container mx-auto p-2">
+    <router-outlet></router-outlet>
     <div class="row">
       <div cdkDropList #minha="cdkDropList" [cdkDropListConnectedTo]="[confirmados]" [cdkDropListData]="myList"
         class="col-lg-6" (cdkDropListDropped)="drop($event)">
@@ -135,3 +136,4 @@
   </div>
 </main>
 
+<!-- ng generate module pages/customers --route pages/customers --module app.module -->
