@@ -8,10 +8,8 @@ import { AppComponent } from './app.component';
 import { InitialComponent } from './pages/initial/initial.component';
 import { ConfigComponent } from './pages/config/config.component';
 import { CardComponent } from './components/card/card.component';
-import { DashboardComponent } from './pages/auth/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ProductDetailComponent } from './pages/auth/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +17,6 @@ import { ProductDetailComponent } from './pages/auth/product-detail/product-deta
     InitialComponent,
     ConfigComponent,
     CardComponent,
-    DashboardComponent,
-    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
