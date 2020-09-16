@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { HttpClient } from '@angular/common/http';
 import {Router, ActivatedRoute} from '@angular/router';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 export interface Character {
   name: string;
@@ -11,12 +12,22 @@ export interface Character {
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  animations: [
+    trigger('animation', [
+      state('', style({ opacity: 1 })),
+      transition('void => ready', [
+        style({ opacity: 0, transform: 'translate(0px, -100px)' }),
+        animate('500ms 0s ease-in-out')
+      ])
+    ])
+  ]
 })
 export class DashboardComponent  {
 
   myList: Character[]
   confirmList: Character[] = [];
+  animationState = 'ready';
 
   constructor(private httpClient: HttpClient,        
               private router: Router,
