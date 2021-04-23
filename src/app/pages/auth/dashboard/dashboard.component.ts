@@ -20,6 +20,13 @@ export interface Character {
         style({ opacity: 0, transform: 'translate(0px, -100px)' }),
         animate('500ms 0s ease-in-out')
       ])
+    ]),
+    trigger('animationLeft', [
+      state('', style({ opacity: 1 })),
+      transition('void => ready', [
+        style({ opacity: 0, transform: 'translate(100px, 0px)' }),
+        animate('500ms 0s ease-in-out')
+      ])
     ])
   ]
 })
@@ -29,7 +36,7 @@ export class DashboardComponent  {
   confirmList: Character[] = [];
   animationState = 'ready';
 
-  constructor(private httpClient: HttpClient,        
+  constructor(private httpClient: HttpClient,
               private router: Router,
               private route: ActivatedRoute) {
     this.getMyList()
@@ -57,6 +64,6 @@ export class DashboardComponent  {
        event.currentIndex);
    }
  }
-  
+
 
 }
