@@ -13,9 +13,17 @@ export class InitialComponent extends ValidationFormHelper implements OnInit {
   nome = "";
 
   constructor(private formBuilder: FormBuilder,
-              private router: Router) { 
+              private router: Router) {
     super();
   }
+  selectedCar: object;
+  form: FormGroup;
+  cars = [
+      { id: 1, name: 'Volvo' },
+      { id: 2, name: 'Saab' },
+      { id: 3, name: 'Opel' },
+      { id: 4, name: 'Audi' },
+  ];
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -23,16 +31,16 @@ export class InitialComponent extends ValidationFormHelper implements OnInit {
       password: this.formBuilder.control('', [Validators.required]),
     });
   }
-  
+
   login() {
     if (this.form.valid) {
       this.router.navigate(['dashboard']);
     } else {
       this.checkValidationsForm(this.form);
     }
-    
+
   }
-  
+
   showNumber(number) {
     console.log(number);
   }

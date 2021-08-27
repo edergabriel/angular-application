@@ -4,6 +4,8 @@ import { DashboardComponent } from './dashboard.component';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { SummaryComponent } from '../summary/summary.component';
 import { OrdersComponent } from '../orders/orders.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -20,10 +22,19 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    OrdersComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    DashboardComponent,
+    SummaryComponent,
+    OrdersComponent
   ],
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forChild(routes),
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    RouterModule
+  ]
 })
 export class DashboardRoutingModule { }
