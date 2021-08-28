@@ -7,7 +7,7 @@ import { AbstractControl, FormGroup, FormBuilder, Validators, FormArray, FormCon
   styleUrls: ['./orders.component.scss']
 })
 export class OrdersComponent implements OnInit {
-  formBuilder: any;
+  date: Date = new Date();
 
   constructor() { }
 
@@ -21,9 +21,28 @@ export class OrdersComponent implements OnInit {
   ];
 
   ngOnInit() {
+    let ordersEdit = {
+      username: "asdffds"
+    }
     this.ordersFormGroup = new FormGroup({
       username: new FormControl(''),
+      text: new FormControl(''),
+      description: new FormControl(''),
+      time: new FormControl(''),
+      date: new FormControl(''),
+      color: new FormControl(''),
+      numbers: new FormControl(''),
     });
+
+    this.ordersFormGroup.controls.username.setValue('aa')
+  }
+
+  checkValue(e) {
+    console.log(e,  this.ordersFormGroup.controls.text.value)
+  }
+
+  submit() {
+    console.log(this.ordersFormGroup);
   }
 
 }
